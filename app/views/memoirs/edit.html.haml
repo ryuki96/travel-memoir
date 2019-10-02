@@ -1,0 +1,13 @@
+.memoir-form
+  =form_for @memoir do |f|
+    .memoir-form__place
+      = f.text_field :place, class: 'place__deside',placeholder: '場所を記入してください',id: "address", type: "text", autocomplete: "off"
+    =f.label :image,class: "upload-image",for: "memoir-form__image" do
+      .upload-zone
+        = f.file_field :image, class: 'memoir-form__image',id:"memoir-form__image"
+        %pre
+          クリックしてファイルをアップロード
+        %i.icon-camera
+          =icon "fas","camera-retro"
+    = f.text_area :text, class: 'memoir-form__text',placeholder: '文章を記入してください',maxlength: '80'
+    =f.submit '更新する', class: 'memoir-form__submit'

@@ -1,0 +1,49 @@
+#memoir-popup
+  .memoir-confirm-box
+    %h2
+      確認
+    .memoir-confirm-lists
+      .close-memoir-popup
+        %span
+          キャンセル
+      =link_to edit_memoir_path,class: "memoir-delete-link" do
+        %span
+          この投稿を編集する
+      =link_to memoir_path, method: :delete,class: "memoir-edit-link" do
+        %span
+          この投稿を削除する
+.wrapper
+  .multiple-information
+    .sidebar-title
+      = @memoir.user.name 
+      さんの人気の投稿
+    - @memoirs_populars.each do |memoir|
+      .popular-post
+        .likes-count
+          .icon-star
+            =icon "fas","star"
+          .likes-num
+            =memoir.likes.count
+          お気に入り
+        .memoir-popurar
+          = link_to memoir_path(memoir.id) do
+            .memoir-popurar__image
+              = image_tag memoir.image.url,class: 'memoir-popurar__image'if memoir.image.present?
+            .memoir-popurar__text
+              = memoir.text
+            .memoir-popurar__place-name
+              = memoir.place
+  .show-memoir
+    = render @memoir
+    = link_to post_path(@memoir.post_id) do
+      .post-showlink
+        アルバムを見る
+  .comments-list
+    .comments
+      = render @comments
+    -if user_signed_in?
+      .comment-form
+        =form_for [@post,@comment] do |f|
+          = f.submit "コメント", class: 'comment-form__submit'
+          = f.text_area :text,class: 'comment-form__text', placeholder: "コメントを入力してください"
+      

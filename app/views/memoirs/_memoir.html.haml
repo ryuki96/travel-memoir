@@ -1,0 +1,19 @@
+.memoir
+  = link_to user_path(memoir.user_id) do
+    .user-icon
+      =image_tag memoir.user.profile.image.url,class: "memoir-userimage-zone" if memoir.user.profile.image.present?
+    .user-name
+      = memoir.user.name
+  -if user_signed_in? && current_user.id == @post.user_id
+    =link_to "#memoir-popup",id:"memoir-delete-button" do
+      .memoir-edit-icon
+        =icon "fas","ellipsis-h"
+  .place-name
+    = memoir.place
+  .memoir__image
+    = image_tag memoir.image.url, class: 'memoir__image'if memoir.image.present?
+  .memoir__text
+    = memoir.text
+  .memoir__date
+    = memoir.created_at.strftime("%Y/%m/%d %H:%M")
+  = render 'likes/like_links', memoir: memoir
