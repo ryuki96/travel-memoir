@@ -1,0 +1,24 @@
+.comment{
+  height:90px;
+  border:solid 1px rgba(111,111,111,0.5);
+  .upper-comment{
+    display:flex;
+    line-height:17px;
+    .user-name{
+      font-size:15px;
+      width:180px;
+      
+    }
+    .comment-date{
+      font-size:12px;
+      line-height:14px;
+    }
+  }
+  .lower-comment{
+    height:43px;
+  }
+    .comment-text{
+      
+      
+    }
+}
