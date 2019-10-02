@@ -1,0 +1,102 @@
+.search-screen
+  .place-form
+    = search_form_for(@q, url:popular_posts_path) do |f|
+      =f.text_field :place_cont,class:"place__search",placeholder:"場所を入力してください",autocomplete:"off"
+      =button_tag type:'submit' ,class:"form__botton" do
+        %i= icon "fas", 'map-marker-alt'
+  .text-form
+    = search_form_for(@q, url:popular_posts_path) do |f|
+      =f.text_field :text_cont,class:"form__search",placeholder:"文字を入力してください"
+      =button_tag type:'submit' ,class:"form__botton" do
+        %i= icon "fas", 'search'
+.wrapper
+  .multiple-information
+    = search_form_for(@q, url:popular_posts_path,class:"area-box") do |f|
+      =f.hidden_field :place_cont,value: "大阪"
+      =button_tag type:'submit' ,class:"area-button" do
+        .osaka
+          .osaka__image
+            =image_tag "osaka_image.jpg",width:"80px",height:"80px"
+          .title
+            大阪
+          .memoir-count
+            =@osaka.count.to_s
+            件
+    = search_form_for(@q, url:popular_posts_path,class:"area-box") do |f|
+      =f.hidden_field :place_cont,value: "東京"
+      =button_tag type:'submit' ,class:"area-button" do
+        .tokyo
+          .tokyo__image
+            =image_tag "tokyo_image.jpg",width:"80px",height:"80px"
+          .title
+            東京
+          .memoir-count
+            =@tokyo.count.to_s
+            件
+    = search_form_for(@q, url:popular_posts_path,class:"area-box") do |f|
+      =f.hidden_field :place_cont,value: "福岡"
+      =button_tag type:'submit' ,class:"area-button" do
+        .hukuoka
+          .hukuoka__image
+            =image_tag "hukuoka_image.jpg",width:"80px",height:"80px"
+          .title
+            福岡
+          .memoir-count
+            =@hukuoka.count.to_s
+            件
+    = search_form_for(@q, url:popular_posts_path,class:"area-box") do |f|
+      =f.hidden_field :place_cont,value: "愛知"
+      =button_tag type:'submit' ,class:"area-button" do
+        .aiti
+          .aiti__image
+            =image_tag "aiti_image.jpg",width:"80px",height:"80px"
+          .title
+            愛知
+          .memoir-count
+            =@aiti.count.to_s
+            件
+    = search_form_for(@q, url:popular_posts_path,class:"area-box") do |f|
+      =f.hidden_field :place_cont,value: "京都"
+      =button_tag type:'submit' ,class:"area-button" do
+        .kyoto
+          .kyoto__image
+            =image_tag "kyoto_image.jpg",width:"80px",height:"80px"
+          .title
+            京都
+          .memoir-count
+            =@kyoto.count.to_s
+            件
+  .memoirs-screen
+    .memoirs
+      .popular-memoirs 
+        - @memoirs_popular.each do |memoir|
+          .memoir
+            = link_to user_path(memoir.user_id) do
+              .user-icon
+                =image_tag memoir.user.profile.image.url,class: "memoir-userimage-zone" if memoir.user.profile.image.present?
+              .user-name
+                = memoir.user.name
+            = link_to memoir_path(memoir.id) do
+              .place-name
+                = memoir.place
+              .memoir__image
+                = image_tag memoir.image.url,class: 'memoir__image'if memoir.image.present?
+              .memoir__text
+                = memoir.text
+              .memoir__date
+                = memoir.created_at.strftime("%Y/%m/%d %H:%M")
+              = render 'likes/like_links', memoir: memoir
+    .memoirs-menu
+      .side-menu-lists
+        =link_to root_path,class: "side-title" do
+          .title
+            Travel Memoir
+        =link_to root_path do
+          .current-list
+            最 新
+        =link_to popular_posts_path do
+          .popular-list__active
+            %i.icon-fire
+              =icon "fas","fire-alt"
+            %span 人 気
+        

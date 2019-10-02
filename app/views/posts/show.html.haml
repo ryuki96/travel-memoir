@@ -1,0 +1,64 @@
+#post-popup
+  .post-confirm-box
+    %h2
+      確認
+    .post-confirm-lists
+      .close-post-popup
+        %span
+          キャンセル
+      =link_to add_post_memoirs_path(@post),class: "post-edit-link" do
+        %span
+          投稿を追加する
+      =link_to post_path, method: :delete,class: "post-delete-link" do
+        %span
+          アルバムを削除する
+.wrapper
+  .multiple-information
+    .sidebar-title
+      = @post.user.name 
+      さんの人気の投稿
+    - @memoirs_populars.each do |memoir|
+      .popular-post
+        .likes-count
+          .icon-star
+            =icon "fas","star"
+          .likes-num
+            =memoir.likes.count
+          お気に入り
+        .memoir-popurar
+          = link_to memoir_path(memoir.id) do
+            .memoir-popurar__image
+              = image_tag memoir.image.url,class: 'memoir-popurar__image'if memoir.image.present?
+            .memoir-popurar__text
+              = memoir.text
+            .memoir-popurar__place-name
+              = memoir.place
+  .show-memoir
+    - @memoirs.each do |memoir|
+      .memoir
+        = link_to user_path(memoir.user_id) do
+          .user-icon
+            =image_tag memoir.user.profile.image.url,class: "memoir-userimage-zone" if memoir.user.profile.image.present?
+          .user-name
+            = memoir.user.name
+        -if user_signed_in? && current_user.id == @post.user_id
+          =link_to "#post-popup",id:"post-delete-button" do
+            .post-edit-icon
+              =icon "fas","ellipsis-h"
+        .place-name
+          = memoir.place
+        .memoir__image
+          = image_tag memoir.image.url,class: 'memoir__image'if memoir.image.present?
+        .memoir__text
+          = memoir.text
+        .memoir__date
+          = memoir.created_at.strftime("%Y/%m/%d %H:%M")
+        = render 'likes/like_links', memoir: memoir
+  .comments-list
+    .comments
+      = render @comments
+    -if user_signed_in?
+      .comment-form
+        =form_for [@post,@comment] do |f|
+          = f.submit "コメント", class: 'comment-form__submit'
+          = f.text_area :text,class: 'comment-form__text', placeholder: "コメントを入力してください"
