@@ -1,0 +1,12 @@
+%div.like-link{id: "like-link-#{memoir.id}"}
+  -if user_signed_in?
+    - if current_user.likes.find_by(memoir_id: memoir.id)
+      = link_to memoir_like_path(memoir.id), method: :delete, remote: true,class: "likes-count" do
+        .glyphicon-heart{id: "heart-#{memoir.id}"}
+          =icon "fas","star"
+        = memoir.likes.count.to_s
+    - else
+      = link_to memoir_unlike_path(memoir.id), method: :post, remote: true,class: "likes-count" do
+        .glyphicon-heart-empty{id: "heart-#{memoir.id}"}
+          =icon "far","star"
+        = memoir.likes.count.to_s
