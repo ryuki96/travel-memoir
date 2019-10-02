@@ -1,0 +1,635 @@
+*{
+  box-sizing:border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+a{
+  text-decoration: none;
+  color:#00a968;
+}
+.top-bar{
+  width: 100%;
+  padding: 15px;
+  border: solid 1px gray;
+    .title {
+      float:left;
+      display: block;
+    }
+    .title a{
+      text-decoration: none;
+      color:black;
+      font-size:30px;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 45px;
+    }
+    .sign-up{
+      display:inline-block;
+      margin-left:1000px;
+      border-right:solid 3px #00a968;
+      border-left:solid 3px #00a968;
+    }
+    .sign-up a{
+      text-decoration: none;
+      color:black;
+      font-size:20px;
+      padding:0 20px;
+      font-weight:500;
+      line-height:45px;
+    }
+    &__lists{
+      margin-right:35px;
+      display:flex;
+      float:right;
+      .list-logout{
+        font-size:15px;
+        padding:0 20px;
+      }
+      .list-logout a{
+        text-decoration: none;
+        color:black;
+        font-size:30px
+      }
+      .list-post{
+        padding:0 20px;
+        width:80px;
+        text-align: center;
+      }
+      .icon-plus{
+        font-size:30px;
+        color:black;
+      }
+      .detail-post{
+        font-size:18px;
+        color:#00a968;
+        font-weight: 600;
+      }
+      .list-friends{
+        padding:0 20px;
+        width:100px;
+        text-align: center;
+      }
+      .icon-home{
+        font-size:30px;
+        color:black;
+      }
+      .detail-friends{
+        font-size:18px;
+        font-weight: 600;
+      }
+      
+      .list-profile{
+        padding:0 20px;
+        width:150px;
+        text-align: center;
+      }
+      .icon-user{
+        font-size:30px;
+        color:black;
+      }
+      .detail-profile{
+        font-size:18px;
+        font-weight: 600;
+      }
+    }
+  }
+  .top-bar::after{
+    @include clearfix;
+  }
+.search-screen{
+  position:relative;
+  background-image:url("travel_title.jpg");
+  background-size:100% ;
+  border-bottom: solid 1px rgb(168, 164, 164);
+  height: 400px;
+  .text-form{
+    text-decoration: none;
+    position:absolute;
+    top:300px;
+    left:700px;
+    box-sizing: border-box;
+    .form__search{
+      position:absolute;
+      padding:3px 30px;
+      border-radius:25px;
+      background-color:white;
+      height: 30px;
+      width: 250px;
+      display:inline-block;
+      border: solid 1px gray;
+      font-size:15px;
+      outline: 0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    .form__botton{
+      position:absolute;
+      margin-left:210px;
+      background: rgba(253, 250, 250, 0.1);
+      border:none;
+      width:25px;
+      height: 20px;
+      padding:3px 0;
+      border-left:none;
+      font-size: 18px;
+      outline: 0;
+
+    }
+  }
+  .place-form{
+    text-decoration: none;
+    position:absolute;
+    box-sizing: border-box;
+    top:200px;
+    left:700px;
+    .place__search{
+      position:absolute;
+      padding:3px 30px;
+      border-radius:25px;
+      background-color:white;
+      height: 30px;
+      width: 250px;
+      display:inline-block;
+      border: solid 1px gray;
+      font-size:15px;
+      outline: 0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    .place__search{
+      position:absolute;
+      padding:3px 30px;
+      border-radius:25px;
+      background-color:white;
+      height: 30px;
+      width: 250px;
+      display:inline-block;
+      border: solid 1px gray;
+      font-size:15px;
+      outline: 0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    .form__botton{
+      position:absolute;
+      margin-left:210px;
+      background: rgba(253, 250, 250, 0.1);
+      border:none;
+      width:25px;
+      height: 20px;
+      padding:3px 0;
+      border-left:none;
+      font-size: 18px;
+      outline: 0;
+
+    }
+  }
+}
+.wrapper{
+  display: flex;
+  height: 100vh;
+  .multiple-information{
+    width: 300px;
+    height: 100vh;
+    border-radius: 4px 4px 0 0;
+    box-shadow:1px 0px 0px 1px rgba(0, 0, 0, 0.29);
+    .area-box{
+      width:300px;
+      .area-button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        -webkit-appearance: none;
+        margin:60px 25px 0;
+        height:82px;
+        width:250px;
+      }
+    }
+    
+    .osaka{
+      height:82px;
+      border: solid 1px #e1e1e1;
+      border-radius: 3px;
+      box-sizing: border-box;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+      line-height:80px;
+    &__image{
+      width:80px;
+      height:80px;
+      float:left;
+    }
+    .title{
+      display:inline-block;
+      float:left;
+      width:80px;
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+    }
+    .memoir-count{
+      display:inline-block;
+      float:right;
+      height:83px;
+      line-height:100px;
+      margin-right:15px;
+      font-weight:600;
+      font-size:16px;
+    }
+  }
+  .tokyo{
+    height:82px;
+    border: solid 1px #e1e1e1;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+    line-height:80px;
+  &__image{
+    width:80px;
+    height:80px;
+    float:left;
+  }
+  .title{
+    display:inline-block;
+    float:left;
+    width:80px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+  }
+  .memoir-count{
+    display:inline-block;
+    float:right;
+    line-height:100px;
+    margin-right:15px;
+    font-weight:600;
+    font-size:16px;
+    height:83px;
+  }
+}
+  .hukuoka{
+    height:82px;
+    border: solid 1px #e1e1e1;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+    line-height:80px;
+  &__image{
+    width:80px;
+    height:80px;
+    float:left;
+  }
+  .title{
+    display:inline-block;
+    float:left;
+    width:80px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+  }
+  .memoir-count{
+    display:inline-block;
+    float:right;
+    line-height:100px;
+    margin-right:15px;
+    font-weight:600;
+    font-size:16px;
+    height:83px;
+  }
+}
+.aiti{
+  height:82px;
+  border: solid 1px #e1e1e1;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+  line-height:80px;
+&__image{
+  width:80px;
+  height:80px;
+  float:left;
+}
+.title{
+  display:inline-block;
+  float:left;
+  width:80px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+}
+.memoir-count{
+  display:inline-block;
+  float:right;
+  line-height:100px;
+  margin-right:15px;
+  font-weight:600;
+  font-size:16px;
+  height:83px;
+}
+}
+.kyoto{
+  height:82px;
+  border: solid 1px #e1e1e1;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+  line-height:80px;
+&__image{
+  width:80px;
+  height:80px;
+  float:left;
+}
+.title{
+  display:inline-block;
+  float:left;
+  width:80px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+}
+.memoir-count{
+  display:inline-block;
+  float:right;
+  line-height:100px;
+  margin-right:15px;
+  font-weight:600;
+  font-size:16px;
+  height:83px;
+  }
+}
+  .sidebar-title{
+    padding:25px 30px 25px;
+    border-bottom:solid 1px #ccc;
+    font-size:20px;
+  }
+  .popular-post{
+    margin:60px auto 0;
+    width:280px;
+    .likes-count{
+      float:left;
+      width:80px;
+      height:82px;
+      font-size:12px;
+      text-align:center;
+      .icon-star{
+        color:#ccc;
+        font-size:35px;
+        margin:5px 0;
+        width:80px;
+      }
+      .likes-num{
+        text-align:center;
+        font-weight:bold;
+      }
+
+    }
+    .memoir-popurar{
+    height:82px;
+    width:200px;
+    border: solid 1px #e1e1e1;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
+    float:right;
+    &__image{
+      width:80px;
+      height:80px;
+      float:left;
+    }
+    &__text{
+      display: inline-block;
+      height:50px;
+      line-height:25px;
+      font-size:13px;
+      margin-left:5px;
+      margin-bottom:5px;
+      width:113px;
+      overflow: hidden;
+    }
+    &__place-name{
+      display: inline-block;
+      font-size:13px;
+      margin-top:5px;
+      width:113px;
+      overflow: hidden;
+      margin-left:5px;
+    }
+  }
+}
+  .popular-post::after{
+    @include clearfix;
+  }
+}
+  .memoirs-screen{
+    width: calc(100vw - 300px);
+    .memoirs-menu{
+      width:250px;
+      float:right;
+      height: 100vh;
+      line-height:70px;
+      padding: 0.2em;
+      border-radius: 4px;
+      border-top:solid 3px rgb(206, 204, 204);
+      box-shadow:0px 1px 1px 2px rgba(0, 0, 0, 0.29);
+      background-color:white;
+    }
+    .memoirs-screen::after{
+      @include clearfix;
+    }
+    .side-menu-lists{
+      height:40%;
+    }
+    .side-title{
+      text-decoration: none;
+      color:black;
+      font-size:30px;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 45px;
+      text-align:center;
+      .title{
+        padding:10px 0;
+        border-bottom: 1.5px solid #eee;
+      }
+    }
+    .popular-list{
+      font-weight: 600;
+      line-height: 45px;
+      text-align:center;
+      font-size:22px;
+      padding:15px 0;
+      border-bottom: 1.5px solid #eee;
+      color:black;
+      &__active{
+        font-weight: 600;
+        line-height: 45px;
+        text-align:center;
+        font-size:22px;
+        padding:15px 0;
+        border-bottom: 1.5px solid #eee;
+        color:black;
+        background: #ccc;
+      .icon-fire{
+        color:red;
+        padding-right:5px;
+      }
+      .icon-star{
+        color:yellow;
+        padding-right:5px;
+      }
+    }
+      
+      .icon-fire{
+        color:red;
+        padding-right:5px;
+      }
+    }
+    .popular-list{
+      font-weight: 600;
+      line-height: 45px;
+      text-align:center;
+      font-size:22px;
+      padding:15px 0;
+      border-bottom: 1.5px solid #eee;
+      .icon-star{
+        color:yellow;
+        padding-right:5px;
+      }
+    }
+    .current-list{
+      font-weight: 600;
+      line-height: 45px;
+      text-align:center;
+      font-size:22px;
+      padding:15px 0;
+      border-bottom: 1.5px solid #eee;
+      color:black;
+      &__active{
+        font-weight: 600;
+        line-height: 45px;
+        text-align:center;
+        font-size:22px;
+        padding:15px 0;
+        border-bottom: 1.5px solid #eee;
+        background: #ccc;
+        color:black;
+      }
+    }
+    .random-list{
+      font-weight: 600;
+      line-height: 45px;
+      text-align:center;
+      font-size:22px;
+      padding:15px 0;
+      border-bottom: 1.5px solid #eee;
+    }
+    .my-memoir{
+      font-weight: 600;
+      line-height: 45px;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-style: italic;
+      text-align:center;
+      font-size:27px;
+      padding:15px 0;
+      border-bottom: 1.5px solid #eee;
+      color:black;
+      &__active{
+        font-weight: 600;
+        line-height: 45px;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-style: italic;
+        text-align:center;
+        font-size:27px;
+        padding:15px 0;
+        border-bottom: 1.5px solid #eee;
+        background: #ccc;
+        color:black;
+      }
+    }
+
+
+    .memoirs{
+      overflow: scroll;
+      position:relative;
+      float:left;
+      height:100vh;
+      width: calc(100vw - 550px);
+      background-color:rgba(219, 241, 219, 0.15);
+      .memoir{
+        
+        height:650px;
+        width:600px;
+        border:solid 1px rgba(80,80,80,0.4);
+        background-color:white;
+        margin:50px 40px 20px 160px;
+        display:inline-block;
+        float:left;
+        a {
+          text-decoration: none;
+          color:black;
+        }
+        .user-name{
+          height:50px;
+          line-height:70px;
+          padding-left: 80px;
+          font-size:20px;
+          display:inline-block;
+        }
+        .user-icon{
+          display:inline-block;
+          float:left;
+          padding: 5px 5px;
+        }
+        .memoir-userimage-zone{
+          position:absolute;
+          height:65px;
+          width:65px;
+          border-radius: 100%;
+        }
+        .place-name{
+          height:30px;
+          padding: 0 20px 0 150px;
+          font-size:15px;
+          line-height:5px;
+        }
+        &__image{
+          height:420px;
+          width:600px;
+          border-top:solid 0.5px rgba(80,80,80,0.6);
+          border-bottom:solid 0.5px rgba(80,80,80,0.6);
+
+        }
+        &__text{
+          font-size:20px;
+          margin-top:10px;
+          height:100px;
+          word-wrap: break-word;
+        }
+        &__date{
+          color:#333;
+          margin-right: 50px;
+          display:inline-block;
+          float:right;
+        }
+        .glyphicon-heart{
+          display:inline-block;
+          float:left;
+          color:yellow;
+          margin-left:10px;
+        }
+        .glyphicon-heart-empty{
+          display:inline-block;
+          float:left;
+          margin-left:10px;
+          color:#ccc;
+        }
+        .like-link{
+          height:80px;
+        }
+        .likes-count{
+          margin:0 5px;
+        }
+        }
+      
+    }
+  }
+}
