@@ -1,0 +1,278 @@
+.user-page{
+  height:400px;
+  width:100%;
+  border-bottom:solid 1px rgba(0,0, 0, 0.4);
+
+  .edit-account{
+    position:absolute;
+    height:35px;
+    width:150px;
+    margin:320px 70% 0;
+    font-weight:bold;
+    border:solid 1px #00a968;
+    padding:5px 3px;
+    text-align:center;
+    line-height:25px;
+    border-radius:10px;
+    background-color: #eee;
+  }
+  .edit-profile{
+    position:absolute;
+    height:250px;
+    width:200px;
+    margin:100px 15% ;
+    .user-image{
+      height:200px;
+      width:200px;
+      border-radius:100%;
+      background:white;
+      box-shadow:0px 0px 10px 3px rgba(0, 0, 0, 0.29);
+    }
+    &__link{
+      position:absolute;
+      margin-top:20px;
+      text-align:center;
+      color:#00a968;
+      height:35px;
+      width:190px;
+      font-weight:bold;
+      border:solid 1px;
+      padding:8px 3px;
+      line-height:17px;
+      border-radius:10px;
+      background-color: #eee;
+    }
+  }
+}
+.profile-page{
+  height:400px;
+  width:100%;
+  border-bottom:solid 1px rgba(0,0, 0, 0.8);
+}
+.backimage-text{
+  position:absolute;
+  overflow: auto;
+  white-space: pre-wrap;
+  margin:150px 40% 0;
+  font-weight:bold;
+  font-size:20px;
+  width:400px;
+}
+.edit-backimage h1{
+  position:absolute;
+  border-left:dashed 1px;
+  height:60px;
+  margin:200px 50% ;
+}
+.edit-backimage h2{
+  position:absolute;
+  border-top:dashed 1px;
+  width:60px;
+  margin:230px 48%;
+}
+.edit-user-image{
+  position:absolute;
+  margin:100px 15% ;
+  height:200px;
+  width:200px;
+  border:solid 1px;
+  border-radius: 100%;
+  box-shadow:0px 0px 10px 3px rgba(0, 0, 0, 0.29);
+  background:white;
+}
+.image-text{
+  overflow: auto;
+  white-space: pre-wrap;
+  margin:50px 20% 0;
+  font-size:16px;
+  font-weight:bold;
+}
+.edit-user-image pre:last-of-type{
+  overflow: auto;
+  white-space: pre-wrap;
+  margin:0 7% ;
+  width:100%;
+  font-weight:bold;
+}
+.edit-user-image h1{
+  position:absolute;
+  border-left:dashed 1px;
+  height:60px;
+  margin:25px 50% ;
+}
+.edit-user-image h2{
+  position:absolute;
+  border-top:dashed 1px;
+  width:60px;
+  margin:50px 35% ;
+}
+.userimage{
+  display:none;
+}
+.backimage{
+  display:none;
+}
+.backimage-upload-zone{
+  position:absolute;
+  height:400px;
+  width:100%;
+}
+.userimage-upload-zone{
+  position:absolute;
+  height:200px;
+  width:200px;
+  border-radius: 100%;
+}
+.backimage-upload-figure{
+  position:absolute;
+  width:100%;
+  height:400px;
+}
+.userimage-preview{
+  top:0px;
+  position:absolute;
+  height:200px;
+  width:200px;
+  border:solid 1px;
+  border-radius: 100%;
+  box-shadow:0px 0px 10px 3px rgba(0, 0, 0, 0.29);
+}
+.profile-submit{
+  display: inline-block;
+  padding: 0.5em 4em;
+  line-height:30px;
+  text-decoration: none;
+  font-size:25px;
+  background: #00a968;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #629565;
+  border-radius: 3px;
+  margin-left:10%;
+  margin-top:30px;
+}
+.profile-submit:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.userimage-now{
+  position:absolute;
+  height:200px;
+  width:200px;
+  border-radius: 100%;
+  opacity:0.5;
+}
+.backimage-now{
+  position:absolute;
+  width:100%;
+  height:400px;
+  opacity:0.5;
+}
+.profile-text{
+  position:absolute;
+  height:180px;
+  width:600px;
+  margin:110px 50% 0;
+  background:rgba(0,0,0,0.25);
+  &__letter{
+    margin:40px 40px;
+    font-size:16px;
+    font-weight:bold;
+    color:rgba(250, 250, 250, 1);
+  }
+}
+.edit-text{
+  height:200px;
+  width:100%;
+}
+.edit-profiletext{
+  margin:20px 30%;
+  width:40%;
+  height:80%;
+  outline:0;
+  font-size:18px;
+}
+#profile-delete-layer {
+  display:none;
+  position: fixed; 
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index:1000;
+}
+#profile-delete-popup {
+  left: 40%;
+  top: 15%;
+  width: 650px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top: -100px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  z-index:5000;
+}
+.confirm-box h2{
+  padding:30px 0 30px;
+  font-size:18px;
+  font-weight:600;
+  border-bottom:solid 1px rgba(0,0, 0, 0.2);
+}
+.confirm-box p{
+  margin-top:48px;
+  font-weight:600;
+  font-size:17px;
+}
+.confirm-lists{
+  margin-top:75px;
+  border-top:solid 1px rgba(0,0, 0, 0.2);
+}
+.close-profile-delete-popup{
+  display:inline-block;
+  height:80px;
+  width:48%;
+  vertical-align:middle;
+  box-sizing:border-box;
+  border-right:solid 1px gray;
+}
+.close-profile-delete-popup span{
+  vertical-align:-35px;
+  font-size:15px;
+}
+.delete-link{
+  display:inline-block;
+  height:80px;
+  width:48%;
+  vertical-align:middle;
+  box-sizing:border-box;
+}
+.delete-link span{
+  vertical-align:-35px;
+  font-size:15px;
+}
+.delete-link a{
+  text-decoration:none;
+  color: #0099e8;
+}
+.delete-profile{
+  display: inline-block;
+  padding: 0.5em 3em;
+  line-height:30px;
+  text-decoration: none;
+  font-size:25px;
+  background: #00a968;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #629565;
+  border-radius: 3px;
+  margin-top:30px;
+  margin-left:18%;
+}
+.delete-profile:active{
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}

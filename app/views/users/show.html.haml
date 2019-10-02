@@ -1,0 +1,70 @@
+.user-page
+  =image_tag @profile.back_image.url,class: "backimage-upload-figure" if @profile.back_image.present?
+  .edit-profile
+    .user-image
+      =image_tag @profile.image.url,class: "userimage-upload-zone" if @profile.image.present?
+    -if user_signed_in? && current_user.id == @user.id
+      =link_to edit_user_profile_path(current_user,@profile),class:"edit-profile__link" do
+        プロフィールを編集する
+  -if @profile.text.present?
+    .profile-text 
+      .profile-text__letter
+        =@profile.text
+  -if user_signed_in? && current_user.id == @user.id
+    .edit-account
+      =link_to edit_user_registration_path do
+        アカウント編集
+        %i.icon-user-cog
+          =icon "fas","user-cog"
+.wrapper
+  .multiple-information
+    .sidebar-title
+      人気の投稿
+    - @memoirs_populars.each do |memoir|
+      .popular-post
+        .likes-count
+          .icon-star
+            =icon "fas","star"
+          .likes-num
+            =memoir.likes.count
+          お気に入り
+        .memoir-popurar
+          = link_to memoir_path(memoir.id) do
+            .memoir-popurar__image
+              = image_tag memoir.image.url,class: 'memoir-popurar__image'if memoir.image.present?
+            .memoir-popurar__text
+              = memoir.text
+            .memoir-popurar__place-name
+              = memoir.place
+  .memoirs-screen
+    .memoirs
+      - @memoirs.each do |memoir|
+        .memoir
+          = link_to user_path(memoir.user_id) do
+            .user-icon
+              =image_tag memoir.user.profile.image.url,class: "memoir-userimage-zone" if memoir.user.profile.image.present?
+            .user-name
+              = memoir.user.name
+          = link_to memoir_path(memoir.id) do
+            .place-name
+              = memoir.place
+            .memoir__image
+              = image_tag memoir.image.url,class: 'memoir__image'if memoir.image.present?
+            .memoir__text
+              = memoir.text
+            .memoir__date
+              = memoir.created_at.strftime("%Y/%m/%d %H:%M")
+            = render 'likes/like_links', memoir: memoir
+    .memoirs-menu
+      .side-menu-lists
+        =link_to root_path,class: "side-title" do
+          .title
+            Travel Memoir
+        = link_to user_path(@user.id) do
+          .my-memoir__active
+            My Memoir
+        =link_to  user_liked_user_path(@user.id) do
+          .popular-list 
+            %i.icon-star
+              =icon "fas","star"
+            %span お気に入り

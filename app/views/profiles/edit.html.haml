@@ -1,0 +1,43 @@
+#profile-delete-layer
+#profile-delete-popup
+  .confirm-box
+    %h2
+      確認
+    %p
+      本当に一度設定をリセットしますか？
+    .confirm-lists
+      .close-profile-delete-popup
+        %span
+          キャンセル
+      =link_to user_profile_path,method: :delete ,class: "delete-link" do
+        %span
+          リセットする
+=form_for [@user,@profile] do |f|
+  = f.hidden_field :profile, { value: @profile }
+  =image_tag @profile.back_image.url,class: "backimage-now" if @profile.back_image.present?
+  .profile-page
+    .edit-backimage
+      =f.label :back_image,class: "upload-backimage",for: "backimage" do
+        .backimage-upload-zone
+          = f.file_field :back_image, class: 'backimage',id:"backimage"
+        %pre.backimage-text
+          クリックしてファイルをアップロード
+        %h1
+        %h2
+    .edit-user-image
+      =image_tag @profile.image.url,class: "userimage-now" if @profile.image.present?
+      =f.label :image,class: "upload-userimage",for: "userimage" do
+        .userimage-upload-zone
+          = f.file_field :image, class: 'userimage',id:"userimage"
+        %pre.image-text
+          クリックして
+        %pre
+          ファイルをアップロード
+        %h1
+        %h2
+  .edit-text
+    =f.text_area :text,class: "edit-profiletext",placeholder: "例) こんにちは！◯◯です。よろしくお願いします。",row: "5",maxlength: '200'
+  =link_to "#profile-delete-popup",id:"delete-button" do
+    %button.delete-profile
+      設定をリセットする
+  =f.submit "設定を保存する",class: "profile-submit"
