@@ -69,7 +69,7 @@
   .memoirs-screen
     .memoirs
       .popular-memoirs 
-        - @memoirs_popular.each do |memoir|
+        - @memoirs_populars.each do |memoir|
           .memoir
             = link_to user_path(memoir.user_id) do
               .user-icon

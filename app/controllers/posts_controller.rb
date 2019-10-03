@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @hukuoka= Memoir.where("place LIKE(?)","%福岡%")
     @aiti= Memoir.where("place LIKE(?)","%愛知%")
     @kyoto= Memoir.where("place LIKE(?)","%京都%")
+    @memoirs_populars = @memoirs_popular.find(Like.group(:memoir_id).order('count(memoir_id) desc').pluck(:memoir_id))
   end
 
   def show
