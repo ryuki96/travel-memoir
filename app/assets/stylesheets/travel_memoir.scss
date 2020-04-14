@@ -185,6 +185,7 @@ a{
 .wrapper{
   display: flex;
   height: 100vh;
+  width: 100vw;
   .multiple-information{
     width: 300px;
     height: 100vh;
@@ -419,7 +420,7 @@ a{
   }
 }
   .memoirs-screen{
-    width: calc(100％ - 300px);
+    width: calc(100vw - 300px);
     .memoirs-menu{
       width:19vw;
       float:right;
